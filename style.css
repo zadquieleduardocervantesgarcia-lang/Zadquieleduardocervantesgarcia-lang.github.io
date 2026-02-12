@@ -1,0 +1,78 @@
+body {
+    background-color: #fce4ec; /* Rosa muy pálido */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    text-align: center;
+    width: 300px;
+}
+
+h1 {
+    color: #c2185b;
+    font-size: 1.5rem;
+}
+
+p {
+    color: #555;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#yesBtn {
+    background-color: #f06292;
+    color: white;
+}
+
+#yesBtn:hover {
+    background-color: #ec407a;
+    transform: scale(1.1);
+}
+
+#noBtn {
+    background-color: #eee;
+    color: #888;
+}
+img{
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 20 px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    text-align: center;
+    width: 200px;
+}
+#miBoton {
+    background-color: #ff4d6d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+#miBoton:hover {
+    background-color: #c9184a;
+}
