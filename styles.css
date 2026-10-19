@@ -1,0 +1,297 @@
+/* ===== Variables ===== */
+:root {
+  --negro: #06080b;
+  --gris-oscuro: #333333;
+  --texto: #1a1a1a;
+  --texto-suave: #444444;
+  --blanco: #ffffff;
+  --fondo: #ffffff;
+  --ancho: 960px;
+}
+
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", system-ui, sans-serif;
+  color: var(--texto);
+  background: var(--fondo);
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* ===== Encabezado (franja negra con diagonal gris) ===== */
+.hero {
+  color: var(--blanco);
+  background:
+    linear-gradient(to bottom right, var(--negro) 50%, var(--gris-oscuro) 50.1%);
+  padding: 32px 24px 40px;
+}
+
+.hero__inner {
+  max-width: var(--ancho);
+  margin: 0 auto;
+}
+
+.hero__title {
+  display: inline-block;
+  font-size: clamp(1.6rem, 4.5vw, 2.8rem);
+  font-weight: 600;
+  padding-bottom: 6px;
+  border-bottom: 3px solid var(--blanco);
+}
+
+.hero__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.hero__name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.hero__contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  justify-items: end;
+  font-size: 0.9rem;
+}
+
+.hero__contact li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.hero__contact a {
+  overflow-wrap: anywhere;
+}
+
+/* ===== Contenido ===== */
+.cv {
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+}
+
+.cv h2 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+/* Perfil */
+.profile {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px;
+  gap: 40px;
+  align-items: center;
+}
+
+.profile > div {
+  order: -1;
+}
+
+.profile p {
+  margin: 0;
+  text-align: justify;
+  color: var(--texto-suave);
+}
+
+.profile__photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid var(--negro);
+}
+
+.divider {
+  border: 0;
+  border-top: 3px solid var(--negro);
+  margin: 40px 0;
+}
+
+/* Columnas */
+.columns {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 56px;
+}
+
+.columns__main > section + section,
+.columns__side > section + section {
+  margin-top: 44px;
+}
+
+/* Experiencia */
+.job + .job {
+  margin-top: 32px;
+}
+
+.job__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.job__header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.job__date {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--blanco);
+  background: var(--negro);
+  padding: 2px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.job__dept {
+  margin: 4px 0 14px;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+.job__area {
+  margin-top: 12px;
+}
+
+.job__area h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.job__area h4::before {
+  content: "– ";
+}
+
+.job__area ul {
+  margin: 0;
+  padding-left: 22px;
+  list-style: square;
+}
+
+.job__area li {
+  margin: 3px 0;
+}
+
+/* Habilidades e idiomas */
+.dots {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dots li {
+  position: relative;
+  padding-left: 26px;
+  margin: 10px 0;
+}
+
+.dots li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--negro);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 760px) {
+  .hero__info {
+    flex-direction: column;
+  }
+
+  .hero__contact {
+    justify-items: start;
+  }
+
+  .hero__info,
+  .hero__contact {
+    width: 100%;
+  }
+
+  .profile {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 24px;
+  }
+
+  .profile > div {
+    order: 0;
+  }
+
+  .profile__photo {
+    width: 160px;
+    height: 160px;
+  }
+
+  .columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .cv h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ===== Impresión ===== */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .job {
+    break-inside: avoid;
+  }
+}
